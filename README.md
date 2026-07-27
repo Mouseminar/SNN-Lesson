@@ -1,5 +1,5 @@
 # SNN-Lesson
-脉冲神经网络实战课程 https://space.bilibili.com/1765043733
+脉冲神经网络实战课程,已经更新到第5集 https://space.bilibili.com/1765043733
 
 
 正在更新中
