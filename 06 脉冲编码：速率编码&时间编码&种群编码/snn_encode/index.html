@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="交互式 SNN 脉冲编码教学演示工具" />
+    <title>SNN 脉冲编码实验室</title>
+    <link rel="stylesheet" href="styles.css?v=20260817-event-visual" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">INTERACTIVE LEARNING LAB</p>
+          <h1>SNN 脉冲编码实验室</h1>
+          <p class="subtitle">调节输入与参数，直观看见连续数值如何被转换为时间序列中的脉冲。</p>
+        </div>
+        <div class="hero-badge"><span class="pulse-dot"></span> 实时演算</div>
+      </header>
+
+      <section class="workspace" aria-label="编码实验工作区">
+        <aside class="control-panel">
+          <div class="section-heading">
+            <span>01</span>
+            <h2>选择编码方式</h2>
+          </div>
+          <label class="field-label" for="encoder-select">编码器</label>
+          <select id="encoder-select" aria-label="选择编码器"></select>
+          <p id="encoder-summary" class="help-text"></p>
+
+          <div class="section-heading params-heading">
+            <span>02</span>
+            <h2>设置参数</h2>
+          </div>
+          <div id="controls" class="controls"></div>
+
+          <div class="button-row">
+            <button id="run-button" class="primary-button">运行编码 <span>↗</span></button>
+            <button id="reset-button" class="secondary-button" title="恢复当前编码器的示例参数">重置</button>
+          </div>
+        </aside>
+
+        <section class="results-panel" aria-live="polite">
+          <div class="result-topline">
+            <div>
+              <p class="eyebrow">ENCODING RESULT</p>
+              <h2 id="result-title">延迟编码 · Latency / TTFS</h2>
+            </div>
+            <div id="result-badge" class="result-badge">T = 12</div>
+          </div>
+
+          <div id="metric-cards" class="metric-cards"></div>
+          <div id="visualization" class="visualization"></div>
+
+          <details class="explanation" open>
+            <summary>理解这次结果</summary>
+            <p id="explanation-text"></p>
+          </details>
+          <details class="raw-data">
+            <summary>查看原始输出矩阵</summary>
+            <pre id="raw-output"></pre>
+          </details>
+        </section>
+      </section>
+
+      <section class="guide">
+        <div class="guide-card"><span class="guide-number">1</span><p><strong>横轴是时间步</strong><br />每一列代表一个离散的时间步 t。</p></div>
+        <div class="guide-card"><span class="guide-number">2</span><p><strong>亮色方块是脉冲</strong><br />深色格表示 0，青绿色格表示脉冲 1。</p></div>
+        <div class="guide-card"><span class="guide-number">3</span><p><strong>从输入寻找规律</strong><br />比较不同输入通道，观察时间、速率或群体响应的差异。</p></div>
+      </section>
+    </main>
+    <script src="app.js?v=20260830-rank-order"></script>
+  </body>
+</html>
